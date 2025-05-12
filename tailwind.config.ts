@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,6 +62,28 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				health: {
+					100: '#E6F7F1',
+					200: '#C1EAD7',
+					300: '#8DD6B9',
+					400: '#4CB896',
+					500: '#2E9972',
+					600: '#1E7A5A',
+					700: '#14634A',
+					800: '#0E4C3A',
+					900: '#073025',
+				},
+				tech: {
+					100: '#E6F5FC',
+					200: '#CCE9FA',
+					300: '#99D4F5',
+					400: '#66C0F0',
+					500: '#33ACE8',
+					600: '#1191D3',
+					700: '#0B76AB',
+					800: '#085A82',
+					900: '#063E59',
 				}
 			},
 			borderRadius: {
@@ -84,11 +107,26 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'pulse-soft': {
+					'0%, 100%': { opacity: '1' },
+					'50%': { opacity: '0.85' }
+				},
+				'shimmer': {
+					'0%': { backgroundPosition: '-200% 0' },
+					'100%': { backgroundPosition: '200% 0' },
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'pulse-soft': 'pulse-soft 2s infinite ease-in-out',
+				'shimmer': 'shimmer 2s infinite linear'
+			},
+			backgroundImage: {
+				'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+				'header-gradient': 'linear-gradient(90deg, #33ACE8 0%, #2E9972 100%)',
+				'ai-gradient': 'linear-gradient(135deg, #6366F1 0%, #0EA5E9 100%)'
 			}
 		}
 	},
