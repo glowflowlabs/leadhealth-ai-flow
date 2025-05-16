@@ -8,7 +8,7 @@ import { cn } from "@/lib/utils";
 const DashboardLayout = () => {
   return (
     <div className="min-h-screen w-full">
-      <Sidebar defaultCollapsed={false}>
+      <Sidebar>
         <SidebarNav />
         <div className={cn("pl-16 lg:pl-64 min-h-screen")}>
           <div className="container mx-auto px-4 py-8">
