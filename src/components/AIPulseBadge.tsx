@@ -10,7 +10,7 @@ const AIPulseBadge = ({ children, className, ...props }: AIPulseBadgeProps) => {
   return (
     <span 
       className={cn(
-        "ai-pill animate-pulse-soft",
+        "ai-pill flex items-center gap-2 bg-gradient-to-r from-health-500/80 to-tech-500/80 text-white py-1 px-3 rounded-full text-sm animate-pulse-soft",
         className
       )}
       {...props}
