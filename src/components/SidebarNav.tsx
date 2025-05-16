@@ -53,7 +53,9 @@ const menuItems = [
 ];
 
 const SidebarNav = () => {
-  const { collapsed } = useSidebar();
+  const { state } = useSidebar();
+  // Use the state property instead of collapsed
+  const collapsed = state === "collapsed";
   
   return (
     <Sidebar
@@ -61,7 +63,7 @@ const SidebarNav = () => {
         "border-r h-screen fixed left-0 top-0",
         collapsed ? "w-16" : "w-64"
       )}
-      collapsible
+      collapsible="icon" // Change from boolean to one of the allowed string values
     >
       <div className={cn(
         "flex items-center p-4 gap-2",
