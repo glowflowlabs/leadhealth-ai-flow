@@ -6,11 +6,11 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 const Orientacoes = () => {
   return (
-    <div className="space-y-6">
-      <h1 className="text-2xl font-bold">Orientação Estratégica</h1>
+    <div className="space-y-4 md:space-y-6 max-w-full">
+      <h1 className="text-xl md:text-2xl font-bold">Orientação Estratégica</h1>
       
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-        <div className="lg:col-span-2">
+      <div className="grid grid-cols-1 xl:grid-cols-3 gap-4 md:gap-6">
+        <div className="xl:col-span-2">
           <Card className="h-full">
             <CardHeader>
               <CardTitle className="text-base font-medium">Relatórios & Análises</CardTitle>
@@ -68,7 +68,7 @@ const Orientacoes = () => {
           </Card>
         </div>
         
-        <div className="h-[600px]">
+        <div className="h-[500px] md:h-[600px]">
           <AIChat />
         </div>
       </div>
@@ -78,7 +78,7 @@ const Orientacoes = () => {
           <CardTitle className="text-base font-medium">Recursos de Aprendizagem</CardTitle>
         </CardHeader>
         <CardContent>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             <div className="p-4 border rounded-lg hover:shadow-md transition-shadow">
               <div className="aspect-video bg-muted rounded mb-3"></div>
               <h3 className="font-medium">Como usar a plataforma</h3>

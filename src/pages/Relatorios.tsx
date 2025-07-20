@@ -57,12 +57,12 @@ const COLORS = ["#2E9972", "#33ACE8", "#6366F1", "#8B5CF6"];
 
 const Relatorios = () => {
   return (
-    <div className="space-y-6">
-      <div className="flex justify-between items-center">
-        <h1 className="text-2xl font-bold">Relatórios</h1>
-        <div className="flex items-center gap-4">
+    <div className="space-y-4 md:space-y-6 max-w-full">
+      <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4">
+        <h1 className="text-xl md:text-2xl font-bold">Relatórios</h1>
+        <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-4">
           <AIPulseBadge>Dados em tempo real</AIPulseBadge>
-          <Button variant="outline">Exportar Relatório</Button>
+          <Button variant="outline" size="sm" className="w-full sm:w-auto">Exportar Relatório</Button>
         </div>
       </div>
       
@@ -74,8 +74,8 @@ const Relatorios = () => {
           <TabsTrigger value="conversion">Conversão</TabsTrigger>
         </TabsList>
         
-        <TabsContent value="overview" className="space-y-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <TabsContent value="overview" className="space-y-4 md:space-y-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-6">
             <Card>
               <CardHeader className="pb-2">
                 <CardTitle className="text-base font-medium">Leads por Dia (Últimos 14 dias)</CardTitle>

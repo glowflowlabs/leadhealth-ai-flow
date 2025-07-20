@@ -8,10 +8,10 @@ import { ChartBar, Calendar, Users, Heart } from "lucide-react";
 
 const Dashboard = () => {
   return (
-    <div className="space-y-6">
-      <div className="flex justify-between items-center">
-        <h1 className="text-2xl font-bold">Dashboard</h1>
-        <span className="text-sm text-muted-foreground">Última atualização: 10 minutos atrás</span>
+    <div className="space-y-4 md:space-y-6 max-w-full">
+      <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2">
+        <h1 className="text-xl md:text-2xl font-bold">Dashboard</h1>
+        <span className="text-xs sm:text-sm text-muted-foreground">Última atualização: 10 minutos atrás</span>
       </div>
       
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -45,8 +45,8 @@ const Dashboard = () => {
         />
       </div>
       
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-        <div className="lg:col-span-2">
+      <div className="grid grid-cols-1 xl:grid-cols-3 gap-4 md:gap-6">
+        <div className="xl:col-span-2">
           <MRRChart />
         </div>
         <div className="space-y-6">
@@ -64,8 +64,8 @@ const Dashboard = () => {
         </div>
       </div>
       
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mt-6">
-        <div className="lg:col-span-2">
+      <div className="grid grid-cols-1 xl:grid-cols-3 gap-4 md:gap-6">
+        <div className="xl:col-span-2">
           <CampaignPerformance />
         </div>
         <div className="bg-white rounded-lg border shadow-sm p-4">

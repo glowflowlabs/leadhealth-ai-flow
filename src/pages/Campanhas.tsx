@@ -155,15 +155,15 @@ const CampaignCard = ({ campaign }: { campaign: any }) => {
 
 const Campanhas = () => {
   return (
-    <div className="space-y-6">
-      <div className="flex justify-between items-center">
-        <h1 className="text-2xl font-bold">Campanhas</h1>
-        <Button className="bg-gradient-to-r from-health-500 to-tech-500">
+    <div className="space-y-4 md:space-y-6 max-w-full">
+      <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4">
+        <h1 className="text-xl md:text-2xl font-bold">Campanhas</h1>
+        <Button className="bg-gradient-to-r from-health-500 to-tech-500 w-full sm:w-auto">
           Nova Campanha
         </Button>
       </div>
       
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 xl:grid-cols-2 gap-4 md:gap-6">
         <div>
           <Tabs defaultValue="active">
             <div className="flex justify-between items-center mb-4">
