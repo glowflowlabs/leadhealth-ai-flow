@@ -1,6 +1,7 @@
 
 import React, { useState } from "react";
 import LeadCard, { Lead } from "@/components/LeadCard";
+import AddLeadModal from "@/components/AddLeadModal";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
@@ -95,6 +96,39 @@ const CRM = () => {
     urgency: "all"
   });
 
+  const handleAddLead = (newLeadData: Omit<Lead, "id" | "createdAt" | "timeline">) => {
+    const newLead: Lead = {
+      ...newLeadData,
+      id: `lead${Date.now()}`,
+      createdAt: new Date().toLocaleString('pt-BR', {
+        day: '2-digit',
+        month: '2-digit',
+        year: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit'
+      }),
+      timeline: [
+        {
+          action: "Lead adicionado manualmente",
+          date: new Date().toLocaleString('pt-BR', {
+            day: '2-digit',
+            month: '2-digit',
+            hour: '2-digit',
+            minute: '2-digit'
+          })
+        }
+      ]
+    };
+    
+    setLeads([newLead, ...leads]);
+  };
+
+  const handleUpdateLead = (updatedLead: Lead) => {
+    setLeads(leads.map(lead => 
+      lead.id === updatedLead.id ? updatedLead : lead
+    ));
+  };
+
   // Filtrar leads com base nos critérios
   const filteredLeads = leads.filter(lead => {
     // Filtro de pesquisa
@@ -116,8 +150,9 @@ const CRM = () => {
     <div className="space-y-4 md:space-y-6 max-w-full">
       <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4">
         <h1 className="text-xl md:text-2xl font-bold">Gerenciamento de Leads</h1>
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-4">
           <AIPulseBadge>IA prioriza contatos</AIPulseBadge>
+          <AddLeadModal onAddLead={handleAddLead} />
         </div>
       </div>
       
@@ -192,7 +227,11 @@ const CRM = () => {
       {filteredLeads.length > 0 ? (
         <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4">
           {filteredLeads.map(lead => (
-            <LeadCard key={lead.id} lead={lead} />
+            <LeadCard 
+              key={lead.id} 
+              lead={lead} 
+              onUpdateLead={handleUpdateLead}
+            />
           ))}
         </div>
       ) : (
