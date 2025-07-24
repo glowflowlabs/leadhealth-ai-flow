@@ -11,6 +11,9 @@ import Relatorios from "./pages/Relatorios";
 import CRM from "./pages/CRM";
 import Orientacoes from "./pages/Orientacoes";
 import NotFound from "./pages/NotFound";
+import Login from "./pages/Login";
+import Cadastro from "./pages/Cadastro";
+import Perfil from "./pages/Perfil";
 import DashboardLayout from "./components/DashboardLayout";
 
 const queryClient = new QueryClient();
@@ -23,6 +26,8 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/cadastro" element={<Cadastro />} />
           
           {/* Rotas do Dashboard */}
           <Route element={<DashboardLayout />}>
@@ -31,6 +36,7 @@ const App = () => (
             <Route path="/relatorios" element={<Relatorios />} />
             <Route path="/crm" element={<CRM />} />
             <Route path="/orientacoes" element={<Orientacoes />} />
+            <Route path="/perfil" element={<Perfil />} />
           </Route>
           
           {/* Catch-all 404 */}
